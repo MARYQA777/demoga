@@ -4,6 +4,10 @@ from pages.base_page import BasePage
 
 class DemoQa(BasePage):
 
+    def __init__(self, driver):
+        self.base_url = 'https://demoqa.com/'
+        super().__init__(driver, self.base_url)
+
     def exist_icon(self):
         try:
             self.find_element(locator='#app > header > a')
@@ -15,7 +19,7 @@ class DemoQa(BasePage):
         self.find_element(locator='#app > header > a').click()
 
     def equal_url(self):
-        if self.get_url() == 'https://demoqa.com/':
+        if self.get_url() == self.base_url:
            return True
         else:
            return False
