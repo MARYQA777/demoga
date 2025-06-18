@@ -15,7 +15,7 @@ class DemoQa(BasePage):
         self.find_element(locator='#app > header > a').click()
 
     def equal_url(self):
-        if self.get_url() == ('https://demoqa.com/'):
+        if self.get_url() == 'https://demoqa.com/':
            return True
         else:
            return False
